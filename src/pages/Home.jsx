@@ -1,7 +1,9 @@
+import FloatingTarget from "../components/FloatingTarget.jsx";
+
 export default function Home() {
   return (
-    <section className="border-t border-gray-200 py-4 text-center text-red-500">
-      Aurélie Beaufils - DEV
+    <section className="min-h-[60vh] flex items-center justify-center">
+      <FloatingTarget label="Développeuse Web Full Stack" image="/pictureofme.jpg" />
     </section>
   );
 }
