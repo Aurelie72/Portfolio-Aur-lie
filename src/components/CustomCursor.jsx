@@ -4,8 +4,8 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function CustomCursor() {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 300, damping: 30 });
-  const springY = useSpring(y, { stiffness: 300, damping: 30 });
+  const springX = useSpring(x, { stiffness: 300, damping: 20 });
+  const springY = useSpring(y, { stiffness: 300, damping: 20 });
 
   useEffect(() => {
     function handleMove(e) {
@@ -19,7 +19,7 @@ export default function CustomCursor() {
   return (
     <motion.div
       style={{ x: springX, y: springY }}
-      className="fixed top-0 left-0 w-3 h-3 rounded-full border border-white pointer-events-none z-[100] flex items-center justify-center"
+      className="fixed top-0 left-0 w-3.5 h-3.5 rounded-full border border-white pointer-events-none z-[100] flex items-center justify-center"
     >
       <div className="w-0.5 h-0.5 rounded-full bg-white" />
     </motion.div>

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const NUM_STRIPS = 20;
 
-export default function Curtains({ color = "bg-red-500" }) {
+export default function Curtains({ color = "bg-gray-500" }) {
   return (
     <div className="fixed inset-0 z-50 flex pointer-events-none">
       {Array.from({ length: NUM_STRIPS }).map((_, i) => (

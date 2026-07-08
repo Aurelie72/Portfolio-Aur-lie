@@ -6,10 +6,11 @@ function normalize(str) {
   return str.toLowerCase().replace(/\s+/g, "-");
 }
 
-const categories = ["Tous", "Front-end", "Back-end", "Qualité", "Gestion de projet"];
+const categories = ["Tous", "Front-end", "Back-end", "Qualité", "Gestion de projet", "Projets Perso"];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("Tous");
+  
 
   const filteredProjects =
     activeFilter === "Tous"

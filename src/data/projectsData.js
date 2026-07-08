@@ -134,7 +134,7 @@ export const projects = [
   {
     id: "denlam",
     titre: "Denlam",
-    filtre: "Projet Perso",
+    filtre: "Projets Perso",
     image: "/assets/denlam.png",
     descriptif:
       "Création du portfolio professionnel de la société DENLAM . Premier projet réalisé pour un client réel, incluant conception, développement et accompagnement technique.",

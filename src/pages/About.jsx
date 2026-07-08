@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function About() {
   return (
     <div
@@ -5,10 +7,10 @@ export default function About() {
       style={{
         backgroundImage:
           "linear-gradient(rgba(234,179,8,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(234,179,8,0.15) 1px, transparent 1px)",
-        backgroundSize: "24px 24px",
+        backgroundSize: "50px 50px",
       }}
     >
-      <section className="max-w-5xl mx-auto px-6 py-10 text-white">
+      <section className="max-w-5xl mx-auto px-6 py-10">
         <h1 className="text-5xl font-bold text-yellow-500 mb-4">À propos</h1>
 
         <h2 className="text-xl font-semibold text-yellow-700 mb-6">
@@ -58,12 +60,12 @@ export default function About() {
             </p>
 
             <div className="space-y-2">
-              <a href="/skills" className="text-yellow-700 font-semibold underline block">
+              <Link to="/skills" className="text-yellow-700 font-semibold underline block">
                 Lien vers mes compétences
-              </a>
-              <a href="/projects" className="text-yellow-700 font-semibold underline block">
+              </Link>
+              <Link to="/projects" className="text-yellow-700 font-semibold underline block">
                 Lien vers mes projets
-              </a>
+              </Link>
             </div>
 
             <p>

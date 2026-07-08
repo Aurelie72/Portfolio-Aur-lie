@@ -4,7 +4,7 @@ import { motion, useMotionValue, useSpring, useAnimate, AnimatePresence } from "
 export default function FloatingTarget({
   title = "Aurélie Beaufils",
   label = "Développeuse Web Full Stack",
-  image = "../pictureofme.png",
+  image = "../assets/pictureofme.png",
 }) {
   const ref = useRef(null);
   const [scope, animate] = useAnimate();
