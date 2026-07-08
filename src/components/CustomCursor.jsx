@@ -19,9 +19,9 @@ export default function CustomCursor() {
   return (
     <motion.div
       style={{ x: springX, y: springY }}
-      className="fixed top-0 left-0 w-5 h-5 rounded-full border border-white pointer-events-none z-[100] flex items-center justify-center"
+      className="fixed top-0 left-0 w-3 h-3 rounded-full border border-white pointer-events-none z-[100] flex items-center justify-center"
     >
-      <div className="w-1 h-1 rounded-full bg-white" />
+      <div className="w-0.5 h-0.5 rounded-full bg-white" />
     </motion.div>
   );
 }

@@ -8,7 +8,7 @@ function Tile({ label }) {
       initial={{ y: 0, scale: 1, rotate: 0 }}
       whileHover={{ y: -4, scale: 1.06, rotate: 2 }}
       transition={{ type: "spring", stiffness: 400, damping: 12 }}
-      className="bg-black text-white border border-purple-400/40 rounded px-0.5 py-0.5 flex items-center justify-center text-center text-[6px] leading-tight font-medium cursor-default"
+      className="bg-black text-white border border-purple-400/40 rounded-lg px-4 py-5 flex items-center justify-center text-center text-base leading-snug font-medium cursor-default"
     >
       {label}
     </motion.div>
@@ -24,14 +24,14 @@ export default function Skills() {
   const category = skillCategories[index];
 
   return (
-    <div className="w-full bg-black">
-      <section className="max-w-[220px] mx-auto px-2 py-2 text-white">
-        <h1 className="text-xs font-bold text-purple-500 mb-2">Compétences</h1>
+    <div className="w-full min-h-screen bg-black flex items-center">
+      <section className="max-w-3xl mx-auto px-6 py-12 text-white w-full">
+        <h1 className="text-5xl font-bold text-purple-500 mb-8">Compétences</h1>
 
-        <div className="flex items-center justify-between mb-1.5">
+        <div className="flex items-center justify-between mb-8">
           <button
             onClick={goPrev}
-            className="text-[9px] px-1 hover:opacity-60 transition-opacity"
+            className="text-3xl px-3 hover:opacity-60 transition-opacity"
             aria-label="Catégorie précédente"
           >
             ←
@@ -40,11 +40,11 @@ export default function Skills() {
           <AnimatePresence mode="wait">
             <motion.h2
               key={category.title}
-              initial={{ opacity: 0, y: 3 }}
+              initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -3 }}
+              exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.2 }}
-              className="text-[9px] font-bold uppercase tracking-wide text-center"
+              className="text-xl font-bold uppercase tracking-wide text-center"
             >
               {category.title}
             </motion.h2>
@@ -52,7 +52,7 @@ export default function Skills() {
 
           <button
             onClick={goNext}
-            className="text-[9px] px-1 hover:opacity-60 transition-opacity"
+            className="text-3xl px-3 hover:opacity-60 transition-opacity"
             aria-label="Catégorie suivante"
           >
             →
@@ -66,7 +66,7 @@ export default function Skills() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="grid grid-cols-3 gap-0.5"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-5"
           >
             {category.skills.map((skill) => (
               <Tile key={skill} label={skill} />
@@ -74,12 +74,12 @@ export default function Skills() {
           </motion.div>
         </AnimatePresence>
 
-        <div className="flex justify-center gap-1 mt-1.5">
+        <div className="flex justify-center gap-2 mt-10">
           {skillCategories.map((cat, i) => (
             <button
               key={cat.title}
               onClick={() => setIndex(i)}
-              className={`w-1 h-1 rounded-full transition-colors ${
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${
                 i === index ? "bg-white" : "bg-gray-700"
               }`}
               aria-label={`Aller à ${cat.title}`}

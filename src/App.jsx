@@ -24,7 +24,7 @@ export default function App() {
       <CustomCursor />
       <Header />
 
-      <main className="flex-1 py-3.5 relative">
+      <main className="flex-1 pt-15 relative">
         <AnimatePresence mode="wait">
           <Curtains key={location.pathname} color={color} />
         </AnimatePresence>
