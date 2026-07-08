@@ -15,7 +15,7 @@ export default function App() {
       <CustomCursor />
       <Header />
 
-      <main className="flex-1 pt-25 sm:pt-15">
+      <main className="flex-1 pt-30 sm:pt-15">
         <AnimatePresence >
           <Curtains key={location.pathname} color={color} />
         </AnimatePresence>

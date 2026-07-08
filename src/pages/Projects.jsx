@@ -1,16 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { projects } from "../data/projectsData.js";
+import ProjectCard from "../components/ProjectCard.jsx";
 
 function normalize(str) {
   return str.toLowerCase().replace(/\s+/g, "-");
 }
 
-const categories = ["Tous", "Front-end", "Back-end", "Qualité", "Gestion de projet", "Projets Perso"];
+const categories = ["Tous", ...new Set(projects.map((p) => p.filtre))];
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState("Tous");
-  
 
   const filteredProjects =
     activeFilter === "Tous"
@@ -21,8 +20,7 @@ export default function Projects() {
     <div className="w-full bg-black min-h-screen">
       <section className="max-w-5xl mx-auto px-6 py-10 text-white">
         <h1 className="text-5xl font-bold text-blue-500 mb-6">Projets</h1>
-
-        {/* Filtres */}
+ 
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((cat) => (
             <button
@@ -39,29 +37,9 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Grille de cartes */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden flex flex-col"
-            >
-              <img
-                src={project.image}
-                alt={project.titre}
-                className="w-full h-40 object-object-contain"
-              />
-              <div className="p-4 flex flex-col flex-1">
-                <h2 className="text-lg font-bold mb-2">{project.titre}</h2>
-                <p className="text-sm text-gray-400 flex-1">{project.descriptif}</p>
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="mt-4 inline-block text-center px-3 py-2 rounded bg-blue-400 hover:bg-blue-300 transition-colors text-black font-semibold text-sm"
-                >
-                  Détails
-                </Link>
-              </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
 
