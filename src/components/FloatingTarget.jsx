@@ -38,7 +38,7 @@ export default function FloatingTarget({
   }, []);
 
   return (
-    <div className="relative w-full flex items-center justify-center py-64 bg-black">
+    <div className="relative w-full flex items-center justify-center py-37 bg-black">
       <h2 className="text-3xl md:text-5xl whitespace-nowrap opacity-70 md:text-[8rem] font-extrabold uppercase text-white tracking-wide select-none -translate-y-5">
         {title}
       </h2>

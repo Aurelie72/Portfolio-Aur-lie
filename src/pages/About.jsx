@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 export default function About() {
   return (
     <div
@@ -58,15 +56,6 @@ export default function About() {
               Je vous invite à découvrir mes projets, qui illustrent mes compétences,
               ma progression et ma capacité à mener un projet de A à Z. 
             </p>
-
-            <div className="space-y-2">
-              <Link to="/skills" className="text-yellow-700 font-semibold underline block">
-                Lien vers mes compétences
-              </Link>
-              <Link to="/projects" className="text-yellow-700 font-semibold underline block">
-                Lien vers mes projets
-              </Link>
-            </div>
 
             <p>
               Aujourd'hui, mon objectif est de continuer à progresser dans ce domaine en
