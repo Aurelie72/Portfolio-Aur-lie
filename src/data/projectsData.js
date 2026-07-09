@@ -2,7 +2,7 @@ export const projects = [
   {
     id: "booki",
     titre: "Booki",
-    filtre: "Front-End",
+    filtre: "Front-end",
     image: "/assets/booki.png",
     descriptif:
       "Création de la page d’accueil d’une agence de voyage en HTML & CSS.",

@@ -23,7 +23,7 @@ export default function FloatingTarget({
       const centerY = rect.top + rect.height / 2;
       const distX = e.clientX - centerX;
       const distY = e.clientY - centerY;
-      const maxMove = 60;
+      const maxMove = 150;
       const dist = Math.sqrt(distX ** 2 + distY ** 2);
       const factor = dist > 0 ? Math.min(maxMove / dist, 1) * 0.5 : 0;
       mouseX.set(distX * factor);
@@ -38,7 +38,7 @@ export default function FloatingTarget({
   }, []);
 
   return (
-    <div className="relative w-full flex items-center justify-center py-56 bg-black">
+    <div className="relative w-full flex items-center justify-center py-64 bg-black">
       <h2 className="text-3xl md:text-5xl whitespace-nowrap opacity-70 md:text-[8rem] font-extrabold uppercase text-white tracking-wide select-none -translate-y-5">
         {title}
       </h2>
