@@ -19,7 +19,7 @@ export default function Projects() {
   return (
     <div className="w-full bg-black min-h-screen">
       <section className="max-w-5xl mx-auto px-6 py-10 text-white">
-        <h1 className="text-5xl font-bold text-blue-500 mb-6">Projets</h1>
+        <h2 className="text-5xl font-bold text-blue-500 mb-6">Projets</h2>
  
         <div className="flex flex-wrap gap-2 mb-8">
           {categories.map((cat) => (

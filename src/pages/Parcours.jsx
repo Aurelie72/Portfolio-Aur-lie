@@ -1,35 +1,10 @@
-const steps = [
-  {
-    period: "2022 — 2025",
-    title: "Directrice en hôtellerie",
-    company: "Groupe Accor",
-    description:
-      "Gestion d'équipe, organisation, relation client et pilotage opérationnel au quotidien.",
-    done: true,
-  },
-  {
-    period: "Depuis février 2026",
-    title: "Formation Développeuse Web",
-    company: "OpenClassrooms",
-    description:
-      "Reconversion vers le développement web : HTML/CSS, JavaScript, React, Node.js et bonnes pratiques.",
-    done: true,
-  },
-  {
-    period: "À venir",
-    title: "La suite...",
-    company: null,
-    description:
-      "Prochaine étape : mettre ces compétences au service d'une équipe dynamique.",
-    done: false,
-  },
-];
+import { steps } from "../data/stepsData.js";
 
 export default function Parcours() {
   return (
     <div className="w-full bg-black">
       <section className="max-w-2xl mx-auto px-6 py-14 text-white">
-        <h1 className="text-4xl font-bold text-orange-500 mb-10">Parcours</h1>
+        <h2 className="text-4xl font-bold text-orange-500 mb-10">Parcours</h2>
 
         <div className="relative border-l-2 border-orange-500/40 pl-8 space-y-10">
           {steps.map((step, i) => (
@@ -46,7 +21,7 @@ export default function Parcours() {
               <p className="text-sm text-orange-400 font-semibold uppercase tracking-wide mb-1">
                 {step.period}
               </p>
-              <h2 className="text-xl font-bold mb-1">{step.title}</h2>
+              <h3 className="text-xl font-bold mb-1">{step.title}</h3>
               {step.company && (
                 <p className="text-sm text-gray-400 mb-2">{step.company}</p>
               )}

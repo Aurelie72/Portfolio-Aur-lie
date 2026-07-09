@@ -5,11 +5,11 @@ export default function ProjectCard({ project }) {
     <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden flex flex-col">
       <img
         src={project.image}
-        alt={project.titre}
+        alt={`Aperçu du projet ${project.titre}`}
         className="w-full h-40 object-center"
       />
       <div className="p-4 flex flex-col flex-1">
-        <h2 className="text-lg font-bold mb-2">{project.titre}</h2>
+        <h3 className="text-lg font-bold mb-2">{project.titre}</h3>
         <p className="text-sm text-gray-400 flex-1">{project.descriptif}</p>
         <Link
           to={`/projects/${project.id}`}

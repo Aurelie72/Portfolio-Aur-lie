@@ -14,7 +14,7 @@ export default function Skills() {
   return (
     <div className="w-full min-h-screen bg-black flex items-center">
       <section className="max-w-3xl mx-auto px-6 py-12 text-white w-full">
-        <h1 className="text-3xl md:text-5xl font-bold text-purple-500 mb-8">Compétences</h1>
+        <h2 className="text-3xl md:text-5xl font-bold text-purple-500 mb-8">Compétences</h2>
 
         <div className="flex items-center justify-between mb-8">
           <button
@@ -26,7 +26,7 @@ export default function Skills() {
           </button>
 
           <AnimatePresence mode="wait">
-            <motion.h2
+            <motion.h3
               key={category.title}
               initial={{ opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Skills() {
               className="text-xl font-bold uppercase tracking-wide text-center"
             >
               {category.title}
-            </motion.h2>
+            </motion.h3>
           </AnimatePresence>
 
           <button

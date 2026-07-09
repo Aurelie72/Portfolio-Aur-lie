@@ -18,10 +18,10 @@ export default function FloatingInput({
     <fieldset
       className={`mx-[30px] my-0 rounded-lg border-1 px-4 pb-3 transition-colors duration-200
         ${textarea ? "" : "flex items-center"}
-        ${focused ? "border-emerald-300" : "border-emerald-600"}`}
+        ${focused ? "border-gray-300" : "border-gray-600"}`}
     >
-      <legend
-        className={`overflow-hidden whitespace-nowrap transition-all duration-200 text-emerald-400 ${
+      <legend id={`${id}-label`}
+        className={`overflow-hidden whitespace-nowrap transition-all duration-200 text-gray-400 ${
           floated ? "max-w-[200px] px-2 text-base" : "max-w-0 px-0 text-base"
         }`}
       >
@@ -32,6 +32,7 @@ export default function FloatingInput({
         type={!textarea ? type : undefined}
         id={id}
         name={name}
+        aria-labelledby={`${id}-label`}
         value={value}
         onChange={onChange}
         onFocus={() => setFocused(true)}
@@ -39,7 +40,7 @@ export default function FloatingInput({
         required={required}
         placeholder={!floated ? label : ""}
         rows={textarea ? 4 : undefined}
-        className="w-full bg-black text-white text-base placeholder-emerald-500 focus:outline-none resize-none py-2"
+        className="w-full bg-black text-white text-base placeholder-gray-500 focus:outline-none resize-none py-2"
       />
     </fieldset>
   );

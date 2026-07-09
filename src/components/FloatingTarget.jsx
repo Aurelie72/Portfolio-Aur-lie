@@ -39,9 +39,9 @@ export default function FloatingTarget({
 
   return (
     <div className="relative w-full flex items-center justify-center py-37 bg-black">
-      <h2 className="text-3xl md:text-5xl whitespace-nowrap opacity-70 md:text-[8rem] font-extrabold uppercase text-white tracking-wide select-none -translate-y-5">
+      <h1 className="text-3xl md:text-5xl whitespace-nowrap opacity-70 md:text-[8rem] font-extrabold uppercase text-white tracking-wide select-none -translate-y-5">
         {title}
-      </h2>
+      </h1>
 
       {/* Conteneur global : texte en orbite (large) + bouton (centré) */}
       <motion.div
@@ -72,19 +72,32 @@ export default function FloatingTarget({
 
         {/* Bouton central, ne tourne pas */}
         <motion.button
+        aria-label="Afficher la photo d’Aurélie"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
+
+          // Accessibilité de la photo : 
+
+  onFocus={() => setIsHovered(true)}        // clavier : tab
+  onBlur={() => setIsHovered(false)}        // clavier : sortie du bouton
+
+  onKeyDown={(e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      setIsHovered((prev) => !prev);        // clavier : enter / espace
+    }
+  }}
           className="relative w-44 h-44 rounded-full border-4 border-white flex items-center justify-center overflow-hidden group z-10"
         >
-          <div className="absolute w-4 h-4 rounded-full bg-white group-hover:bg-black transition-colors z-10" />
+          
+          <div aria-hidden="true" className="absolute w-4 h-4 rounded-full bg-white group-hover:bg-black transition-colors z-10" />
 
           <motion.div
             initial={{ scale: 0 }}
             whileHover={{ scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0 bg-white rounded-full"
+            className="absolute inset-0 bg-white rounded-full "
           />
         </motion.button>
 

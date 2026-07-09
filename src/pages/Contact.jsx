@@ -50,7 +50,7 @@ export default function Contact() {
   return (
     <div className="w-full bg-black">
       <section className="max-w-xl mx-auto px-8 py-14 text-white">
-        <h1 className="text-5xl font-bold text-emerald-500 mb-8">Contact</h1>
+        <h2 className="text-5xl font-bold text-emerald-500 mb-8">Contact</h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <FloatingInput id="nom" name="nom" label="Nom" value={formData.nom} onChange={handleChange} required />
@@ -65,7 +65,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg"
+              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-gray-200"
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer"}
             </button>
@@ -84,13 +84,13 @@ export default function Contact() {
         </form>
 
         <div className="flex justify-center gap-6 mt-10">
-          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="hover:text-emerald-400 transition-colors">
+          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil GitHub d’Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
             <FaGithub size={32} />
           </a>
-          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-emerald-400 transition-colors">
+          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d’Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
             <FaLinkedin size={32} />
           </a>
-          <a href="mailto:lapaille17@hotmail.fr" aria-label="Email" className="hover:text-emerald-400 transition-colors">
+          <a href="mailto:lapaille17@hotmail.fr" aria-label="Envoyer un email à Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
             <FaEnvelope size={32} />
           </a>
         </div>

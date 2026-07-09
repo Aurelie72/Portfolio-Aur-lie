@@ -31,7 +31,7 @@ export default function ProjectDetail() {
 
         <img
           src={project.image}
-          alt={project.titre}
+          alt={`Aperçu du projet ${project.titre}`}
           className="w-full h-64 object-cover rounded-lg mb-6"
         />
 
