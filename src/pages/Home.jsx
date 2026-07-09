@@ -5,6 +5,7 @@ import About from "./About.jsx";
 import Skills from "./Skills.jsx";
 import Projects from "./Projects.jsx";
 import Contact from "./Contact.jsx";
+import Parcours from "./Parcours.jsx";
 
 export default function Home() {
   const location = useLocation();
@@ -52,7 +53,9 @@ export default function Home() {
       <div id="about">
         <About />
       </div>
-
+      <div id="parcours">
+        <Parcours />
+      </div>
       <div id="skills">
         <Skills />
       </div>
