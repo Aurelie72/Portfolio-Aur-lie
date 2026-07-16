@@ -3,7 +3,6 @@ import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import FloatingInput from "../components/FloatingInput.jsx";
 
-
 const SERVICE_ID = "service_q8vx4km";
 const TEMPLATE_ID = "template_c8bwsi6";
 const PUBLIC_KEY = "R4bdwIYEM1Lp7bftR";
@@ -14,7 +13,9 @@ export default function Contact() {
     email: "",
     telephone: "",
     message: "",
+    website: "" // HONEYPOT
   });
+
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
   function handleChange(e) {
@@ -23,6 +24,13 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    // 🛡️ HONEYPOT : si rempli → spam → on bloque
+    if (formData.website !== "") {
+      console.warn("Spam détecté — formulaire bloqué");
+      return;
+    }
+
     setStatus("sending");
 
     emailjs
@@ -39,7 +47,7 @@ export default function Contact() {
       )
       .then(() => {
         setStatus("success");
-        setFormData({ nom: "", email: "", telephone: "", message: "" });
+        setFormData({ nom: "", email: "", telephone: "", message: "", website: "" });
       })
       .catch((error) => {
         console.error("Erreur EmailJS :", error);
@@ -53,6 +61,18 @@ export default function Contact() {
         <h2 className="text-5xl font-bold text-emerald-500 mb-8">Contact</h2>
 
         <form onSubmit={handleSubmit} className="space-y-6">
+
+          {/* Champ honeypot invisible */}
+          <input
+            type="text"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            className="hidden"
+            tabIndex="-1"
+            autoComplete="off"
+          />
+
           <FloatingInput id="nom" name="nom" label="Nom" value={formData.nom} onChange={handleChange} required />
           <FloatingInput id="email" name="email" label="Email" type="email" value={formData.email} onChange={handleChange} required />
           <FloatingInput id="telephone" name="telephone" label="Téléphone" type="tel" value={formData.telephone} onChange={handleChange} />
