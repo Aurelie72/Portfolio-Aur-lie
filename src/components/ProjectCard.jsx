@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 
 export default function ProjectCard({ project }) {
   return (
-    <div className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden flex flex-col">
+    <article className="bg-gray-900 border border-gray-700 rounded-lg overflow-hidden flex flex-col">
       <img
         src={project.image}
         alt={`Aperçu du projet ${project.titre}`}
-        className="w-full h-40 object-center"
+        loading="lazy"
+        className="w-full h-40 object-cover"
       />
       <div className="p-4 flex flex-col flex-1">
         <h3 className="text-lg font-bold mb-2">{project.titre}</h3>
@@ -18,6 +19,6 @@ export default function ProjectCard({ project }) {
           Détails
         </Link>
       </div>
-    </div>
+    </article>
   );
 }

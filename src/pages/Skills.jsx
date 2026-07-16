@@ -13,7 +13,7 @@ export default function Skills() {
 
   return (
     <div className="w-full min-h-screen bg-black flex items-center">
-      <section className="max-w-3xl mx-auto px-6 py-12 text-white w-full">
+      <div className="max-w-3xl mx-auto px-6 py-12 text-white w-full">
         <h2 className="text-3xl md:text-5xl font-bold text-purple-500 mb-8">Compétences</h2>
 
         <div className="flex items-center justify-between mb-8">
@@ -74,7 +74,7 @@ export default function Skills() {
             />
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 }

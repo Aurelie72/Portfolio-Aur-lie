@@ -18,7 +18,7 @@ export default function Projects() {
 
   return (
     <div className="w-full bg-black min-h-screen">
-      <section className="max-w-5xl mx-auto px-6 py-10 text-white">
+      <div className="max-w-5xl mx-auto px-6 py-10 text-white">
         <h2 className="text-5xl font-bold text-blue-500 mb-6">Projets</h2>
  
         <div className="flex flex-wrap gap-2 mb-8">
@@ -29,7 +29,7 @@ export default function Projects() {
               className={`px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide transition-colors ${
                 activeFilter === cat
                   ? "bg-blue-500 text-black"
-                  : "bg-gray-800 text-gray-300 hover:bg-gray-700"
+                  : "bg-gray-800 text-gray-400 hover:bg-gray-700"
               }`}
             >
               {cat}
@@ -48,7 +48,7 @@ export default function Projects() {
             Aucun projet dans cette catégorie pour le moment.
           </p>
         )}
-      </section>
+      </div>
     </div>
   );
 }

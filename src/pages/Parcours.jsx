@@ -3,7 +3,7 @@ import { steps } from "../data/stepsData.js";
 export default function Parcours() {
   return (
     <div className="w-full bg-black">
-      <section className="max-w-2xl mx-auto px-6 py-14 text-white">
+      <div className="max-w-2xl mx-auto px-6 py-14 text-white">
         <h2 className="text-4xl font-bold text-orange-500 mb-10">Parcours</h2>
 
         <div className="relative border-l-2 border-orange-500/40 pl-8 space-y-10">
@@ -25,13 +25,13 @@ export default function Parcours() {
               {step.company && (
                 <p className="text-sm text-gray-400 mb-2">{step.company}</p>
               )}
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <p className="text-gray-400 text-sm leading-relaxed">
                 {step.description}
               </p>
             </div>
           ))}
         </div>
-      </section>
+      </div>
     </div>
   );
 }

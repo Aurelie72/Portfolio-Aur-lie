@@ -80,6 +80,7 @@ export default function FloatingTarget({
 
           // Accessibilité de la photo : 
 
+
   onFocus={() => setIsHovered(true)}        // clavier : tab
   onBlur={() => setIsHovered(false)}        // clavier : sortie du bouton
 

@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { FaGithub} from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 import { projects } from "../data/projectsData.js";
 
 export default function ProjectDetail() {
@@ -9,19 +9,19 @@ export default function ProjectDetail() {
   if (!project) {
     return (
       <div className="w-full bg-black min-h-screen text-white">
-        <section className="max-w-3xl mx-auto px-4 py-10 text-center">
+        <div className="max-w-3xl mx-auto px-4 py-10 text-center">
           <p className="mb-4">Projet introuvable.</p>
           <Link to="/projects" className="text-blue-400 underline">
             Retour aux projets
           </Link>
-        </section>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="w-full bg-black min-h-screen">
-      <section className="max-w-3xl mx-auto px-4 py-10 text-white">
+      <article className="max-w-3xl mx-auto px-4 py-10 text-white">
         <Link
           to="/projects"
           className="text-sm text-gray-400 hover:text-blue-400 transition-colors mb-6 inline-block"
@@ -32,6 +32,7 @@ export default function ProjectDetail() {
         <img
           src={project.image}
           alt={`Aperçu du projet ${project.titre}`}
+          loading="lazy"
           className="w-full h-64 object-cover rounded-lg mb-6"
         />
 
@@ -42,7 +43,7 @@ export default function ProjectDetail() {
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 rounded bg-gray-800 border border-gray-700 text-xs text-gray-300"
+              className="px-2 py-1 rounded bg-gray-800 border border-gray-700 text-xs text-gray-400"
             >
               {tech}
             </span>
@@ -64,9 +65,9 @@ export default function ProjectDetail() {
               <FaGithub /> Code source
             </a>
           )}
-         
         </div>
-      </section>
+      </article>
     </div>
   );
 }
+

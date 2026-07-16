@@ -7,24 +7,28 @@ import Projects from "./Projects.jsx";
 import Contact from "./Contact.jsx";
 import Parcours from "./Parcours.jsx";
 
+
+
 export default function Home() {
   const location = useLocation();
 
-  useEffect(() => {
-    if (location.hash) {
-      const el = document.querySelector(location.hash);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+useEffect(() => {
+  if (location.hash) {
+    const el = document.querySelector(location.hash);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location]);
+  }
+}, [location]);
 
   return (
     <div>
-      <div id="home">
+      <section id="home">
         <FloatingTarget />
         <div className="w-full bg-black text-white text-center pb-16 px-6">
-          <p className="max-w-xl mx-auto text-base sm:text-lg text-gray-300 mb-6">
+          <p className="max-w-xl mx-auto text-base sm:text-lg text-gray-400 mb-6">
             Développeuse web en reconversion, passionnée par la création d'interfaces modernes et la résolution de problèmes concrets.
           </p>
 
@@ -48,25 +52,25 @@ export default function Home() {
 
           </div>
         </div>
-      </div>
+      </section>
 
-      <div id="about">
+      <section id="about">
         <About />
-      </div>
-      <div id="parcours">
+      </section>
+      <section id="parcours">
         <Parcours />
-      </div>
-      <div id="skills">
+      </section>
+      <section id="skills">
         <Skills />
-      </div>
+      </section>
 
-      <div id="projects">
+      <section id="projects">
         <Projects />
-      </div>
+      </section>
 
-      <div id="contact">
+      <section id="contact">
         <Contact />
-      </div>
+      </section>
     </div>
   );
 }

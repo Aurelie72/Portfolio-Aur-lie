@@ -3,7 +3,7 @@ import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import FloatingInput from "../components/FloatingInput.jsx";
 
-// Remplace ces 3 valeurs par celles de ton compte EmailJS
+
 const SERVICE_ID = "service_q8vx4km";
 const TEMPLATE_ID = "template_c8bwsi6";
 const PUBLIC_KEY = "R4bdwIYEM1Lp7bftR";
@@ -65,7 +65,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-gray-200"
+              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-gray-300"
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer"}
             </button>
@@ -84,13 +84,13 @@ export default function Contact() {
         </form>
 
         <div className="flex justify-center gap-6 mt-10">
-          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil GitHub d’Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
+          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil GitHub d’Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
             <FaGithub size={32} />
           </a>
-          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d’Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
+          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d’Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
             <FaLinkedin size={32} />
           </a>
-          <a href="mailto:lapaille17@hotmail.fr" aria-label="Envoyer un email à Aurélie Beaufils" className="hover:text-emerald-400 transition-colors">
+          <a href="mailto:lapaille17@hotmail.fr" aria-label="Envoyer un email à Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
             <FaEnvelope size={32} />
           </a>
         </div>
