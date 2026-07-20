@@ -1,16 +1,67 @@
-# React + Vite
+# Portfolio – Aurélie Beaufils
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Développeuse Web Full Stack
 
-Currently, two official plugins are available:
+Ce portfolio présente mes projets, mes compétences et mon parcours en développement web.  
+Il a été conçu pour offrir une expérience moderne, fluide, accessible et optimisée.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Technologies utilisées
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Front-end
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- React Router
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Outils & Qualité
+
+- Git / GitHub
+- Lighthouse
+- Wave
+- Chrome DevTools
+
+---
+
+## Installation & Lancement du projet
+
+Ce projet utilise Vite et nécessite Node.js
+
+Cloner le projet
+git clone https://github.com/Aurelie72/portfolio-aurelie.git
+cd portfolio-aurelie
+Installer les dépendances
+npm install
+Lancer le serveur de développement
+npm run dev
+
+## Fonctionnalités principales
+
+- Interface moderne et animée
+- Composants réutilisables
+- Animations avancées (Framer Motion)
+- Formulaire de contact connecté via EmailJS
+- Accessibilité optimisée (Wave 0 erreur, Lighthouse )
+- SEO optimisé (meta description, robots.txt)
+- Images optimisées
+- Navigation fluide (React Router)
+
+---
+
+## Structure du projet
+
+src/
+├── components/
+├── pages/
+├── assets/
+├── data/
+├── App.jsx
+└── main.jsx
+
+## Licence
+
+Ce projet est libre d’utilisation pour consultation.  
+Toute reproduction ou réutilisation du design doit être demandée au préalable.
