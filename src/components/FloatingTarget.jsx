@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValue, useSpring, useAnimate, AnimatePresence } from "framer-motion";
+const isDesktop = window.matchMedia("(min-width: 1024px)").matches;
 
 export default function FloatingTarget({
   title = "Aurélie Beaufils",
@@ -102,20 +103,20 @@ export default function FloatingTarget({
           />
         </motion.button>
 
-        {/* Photo qui apparaît au survol, à côté du bouton */}
+        {/* Photo qui apparaît au survol, à côté du bouton sur desktop */}
         <AnimatePresence>
-          {isHovered && (
-            <motion.img
-              src={image}
-              alt={title}
-              initial={{ opacity: 0, scale: 0.85 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.85 }}
-              transition={{ duration: 0.3 }}
-              className="absolute w-56 h-56 object-cover rounded-lg pointer-events-none z-20 left-full ml-8"
-            />
-          )}
-        </AnimatePresence>
+  {isHovered && isDesktop && (
+    <motion.img
+      src={image}
+      alt={title}
+      initial={{ opacity: 0, scale: 0.85 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.85 }}
+      transition={{ duration: 0.3 }}
+      className="absolute w-56 h-56 object-cover rounded-lg pointer-events-none z-20 left-full ml-8"
+    />
+  )}
+</AnimatePresence>
       </motion.div>
     </div>
   );
