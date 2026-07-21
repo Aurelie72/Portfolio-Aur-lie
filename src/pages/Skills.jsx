@@ -47,7 +47,7 @@ export default function Skills() {
           </button>
         </div>
 
-        <AnimatePresence mode="wait">
+        {/* <AnimatePresence mode="wait">
           <motion.div
             key={category.title}
             initial={{ opacity: 0 }}
@@ -60,7 +60,28 @@ export default function Skills() {
               <Tile key={skill} label={skill} />
             ))}
           </motion.div>
-        </AnimatePresence>
+        </AnimatePresence> */}
+
+        <AnimatePresence mode="wait">
+  <motion.div
+    key={category.title}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.2 }}
+    drag="x"
+    dragConstraints={{ left: 0, right: 0 }}
+    onDragEnd={(event, info) => {
+      if (info.offset.x < -50) goNext();
+      if (info.offset.x > 50) goPrev();
+    }}
+    className="grid grid-cols-2 sm:grid-cols-3 gap-5"
+  >
+    {category.skills.map((skill) => (
+      <Tile key={skill} label={skill} />
+    ))}
+  </motion.div>
+</AnimatePresence>
 
         <div className="flex justify-center gap-2 mt-10">
           {skillCategories.map((cat, i) => (

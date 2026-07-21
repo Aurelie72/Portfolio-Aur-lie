@@ -9,7 +9,6 @@ export default function Parcours() {
         <div className="relative border-l-2 border-orange-500/40 pl-8 space-y-10">
           {steps.map((step, i) => (
             <div key={i} className="relative">
-              {/* Point sur la frise */}
               <span
                 className={`absolute -left-[41px] top-1 w-4 h-4 rounded-full border-2 ${
                   step.done

@@ -23,7 +23,7 @@ export default function ProjectDetail() {
     <div className="w-full bg-black min-h-screen">
       <article className="max-w-3xl mx-auto px-4 py-10 text-white">
         <Link
-          to="/projects"
+          to="/#projects"
           className="text-sm text-gray-400 hover:text-blue-400 transition-colors mb-6 inline-block"
         >
           ← Retour aux projets

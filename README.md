@@ -31,7 +31,7 @@ Il a été conçu pour offrir une expérience moderne, fluide, accessible et opt
 Ce projet utilise Vite et nécessite Node.js
 
 Cloner le projet
-git clone https://github.com/Aurelie72/portfolio-aurelie.git
+git clone https://github.com/Aurelie72/Portfolio-Aur-lie.git
 cd portfolio-aurelie
 Installer les dépendances
 npm install
