@@ -22,9 +22,7 @@ export default function FloatingInput({
         ${focused ? "border-gray-300" : "border-gray-600"}`}
     >
       <legend id={`${id}-label`}
-        className={`overflow-hidden whitespace-nowrap transition-all duration-200 text-gray-400 ${
-          floated ? "max-w-[200px] px-2 text-base" : "max-w-0 px-0 text-base"
-        }`}
+        className={`overflow-hidden whitespace-nowrap transition-all duration-200 text-gray-400 ${floated ? "max-w-[200px] px-2 text-base" : "sr-only"}`}
       >
         {label}
       </legend>

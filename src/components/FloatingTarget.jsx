@@ -40,7 +40,14 @@ export default function FloatingTarget({
 
   return (
     <div className="relative w-full flex items-center justify-center py-37 bg-black">
-      <h1 className="text-3xl md:text-5xl whitespace-nowrap opacity-70 md:text-[8rem] font-extrabold uppercase text-white tracking-wide select-none -translate-y-5">
+<h1
+  className="
+    text-3xl        
+    md:text-5xl    
+    xl:text-9xl        
+    whitespace-nowrap opacity-70 font-extrabold uppercase text-white tracking-wide select-none translate-y-4
+  "
+>
         {title}
       </h1>
 
@@ -48,7 +55,7 @@ export default function FloatingTarget({
       <motion.div
         ref={ref}
         style={{ x: springX, y: springY }}
-        className="absolute w-64 h-64 flex items-center justify-center -translate-y-12"
+        className="absolute w-64 h-64 flex items-center justify-center translate-y-2"
       >
         {/* Texte en orbite, tourne en continu, plus grand que le bouton */}
         <motion.div ref={scope} className="absolute w-full h-full pointer-events-none">

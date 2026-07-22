@@ -17,7 +17,7 @@ export const projects = [
     ],
     explications:
       "Le projet Booki consiste à intégrer la page d’accueil d’une agence de voyage à partir de maquettes Figma. L’objectif était de produire une interface fidèle au design fourni, entièrement responsive et structurée de manière sémantique. J’ai intégré les différentes sections du site, géré les layouts avec Flexbox et Grid, optimisé les images, et assuré une expérience utilisateur cohérente sur tous les appareils. J’ai également utilisé Chrome_DevTools pour tester le rendu sur différents breakpoints, et Git_GitHub pour versionner le projet proprement. Ce projet marque la première étape de ma progression : passer de la découverte du HTML/CSS à la création d’une interface professionnelle, prête à être intégrée dans un site réel. Pour aller plus loin je pourrais ajouter des animations.",
-    github: null,
+    github: "https://github.com/Aurelie72/booki-starter-code.git",
     demo: null,
     video: null,
   },
@@ -89,7 +89,7 @@ export const projects = [
   {
     id: "mon-vieux-grimoire",
     titre: "Mon Vieux Grimoire",
-    filtre: "Back end",
+    filtre: "Back-end",
     image: "/assets/mvg.png",
     descriptif:
       "Développement du back-end d’un site de notation de livres avec Node.js, Express et MongoDB.",
@@ -134,7 +134,7 @@ export const projects = [
   {
     id: "denlam",
     titre: "Denlam",
-    filtre: "Projets Perso",
+    filtre: "PROJETS Perso",
     image: "/assets/denlam.png",
     descriptif:
       "Création du portfolio professionnel de la société DENLAM . Premier projet réalisé pour un client réel, incluant conception, développement et accompagnement technique.",

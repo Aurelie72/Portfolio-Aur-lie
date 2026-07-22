@@ -53,6 +53,7 @@ npm run dev
 
 ## Structure du projet
 
+```
 src/
 ├── components/
 ├── pages/
@@ -60,8 +61,13 @@ src/
 ├── data/
 ├── App.jsx
 └── main.jsx
+```
 
 ## Licence
 
-Ce projet est libre d’utilisation pour consultation.  
+Ce projet est libre d’utilisation pour consultation.
 Toute reproduction ou réutilisation du design doit être demandée au préalable.
+
+```
+
+```

@@ -47,21 +47,6 @@ export default function Skills() {
           </button>
         </div>
 
-        {/* <AnimatePresence mode="wait">
-          <motion.div
-            key={category.title}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="grid grid-cols-2 sm:grid-cols-3 gap-5"
-          >
-            {category.skills.map((skill) => (
-              <Tile key={skill} label={skill} />
-            ))}
-          </motion.div>
-        </AnimatePresence> */}
-
         <AnimatePresence mode="wait">
   <motion.div
     key={category.title}

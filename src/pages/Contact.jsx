@@ -21,7 +21,7 @@ export default function Contact() {
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Efface l'erreur du champ dès que l'utilisateur retape
+
     if (errors[e.target.name]) {
       setErrors({ ...errors, [e.target.name]: "" });
     }
@@ -90,15 +90,17 @@ export default function Contact() {
 
         <form onSubmit={handleSubmit} noValidate className="space-y-6">
 
-          <input
-            type="text"
-            name="website"
-            value={formData.website}
-            onChange={handleChange}
-            className="hidden"
-            tabIndex="-1"
-            autoComplete="off"
-          />
+<label htmlFor="website" className="sr-only">Ne pas remplir ce champ</label>
+<input
+  type="text"
+  id="website"
+  name="website"
+  value={formData.website}
+  onChange={handleChange}
+  className="hidden"
+  tabIndex="-1"
+  autoComplete="off"
+/>
 
           <div>
             <FloatingInput
@@ -126,10 +128,16 @@ export default function Contact() {
             )}
           </div>
 
-          <FloatingInput
-            id="telephone" name="telephone" label="Téléphone" type="tel"
-            value={formData.telephone} onChange={handleChange}
-          />
+<div>
+  <FloatingInput
+    id="telephone"
+    name="telephone"
+    label="Téléphone"
+    type="tel"
+    value={formData.telephone}
+    onChange={handleChange}
+  />
+</div>
 
           <div>
             <FloatingInput
