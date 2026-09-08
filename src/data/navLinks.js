@@ -7,12 +7,6 @@ export const navLinks = [
     color: "text-black",
   },
   {
-    to: "/#parcours",
-    label: "Parcours",
-    bg: "bg-orange-500",
-    color: "text-white",
-  },
-  {
     to: "/#skills",
     label: "Compétences",
     bg: "bg-purple-500",

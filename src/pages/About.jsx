@@ -12,55 +12,56 @@ export default function About() {
         <h2 className="text-5xl font-bold text-yellow-500 mb-4">À propos</h2>
 
         <h3 className="text-xl font-semibold text-yellow-700 mb-6">
-          « Il faut avoir l'audace d'être optimiste. »
+          Un site web bien pensé, ça change tout pour une activité.
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 text-base text-gray-400 leading-relaxed">
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p>
-              L'optimisme est une force. C'est la capacité à avancer malgré les doutes,
-              à voir des possibilités là où d'autres voient des obstacles, et à continuer
-              à apprendre, progresser et créer. C'est exactement cet état d'esprit qui a
-              guidé ma reconversion.
+ Après un parcours réussi dans l'hôtellerie où j'occupais un poste
+              de Directrice chez Accor, un métier où l'exigence, le sens
+              du service et la satisfaction client ne sont jamais négociables. J'ai
+              choisi d'appliquer cette même rigueur au développement web.
             </p>
 
             <p>
-              Après un parcours réussi dans l'hôtellerie où j'occupais depuis 2022 un poste
-              de Directrice dans le groupe Accor, j'ai fait le choix d'un nouveau challenge :
-              me reconvertir au développement web. J'ai découvert un univers passionnant,
-              en constante évolution, riche en créativité et en possibilités.
+              Je me suis formée en profondeur pour être capable de concevoir un site de A à Z : de la première idée à la mise en ligne, en passant par le design, le développement et l'accompagnement technique.
             </p>
 
             <p>
-              Ma formation chez OpenClassrooms m'a permis de mobiliser mes compétences
-              transversales :
+              Ce que mon parcours précédent m'apporte concrètement dans mes projets :
             </p>
 
             <ul className="list-disc list-inside space-y-1">
-              <li>Organisation & gestion de projet</li>
-              <li>Rigueur & sens des responsabilités</li>
-              <li>Communication & relation client</li>
-              <li>Adaptabilité & gestion du stress</li>
+              <li>Une vraie capacité d'écoute pour comprendre votre besoin réel</li>
+              <li>Une gestion de projet organisée, avec des délais tenus</li>
+              <li>Une communication claire à chaque étape, sans jargon inutile</li>
+              <li>Le sens du détail et de la qualité, jusqu'à la mise en ligne</li>
             </ul>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-2">
             <p>
-              Motivation, dynamisme, logique sont les qualités humaines qu'on me reconnaît.
-              Ces qualités, essentielles dans mon ancien métier, sont aujourd'hui au cœur
-              de ma pratique du développement. J'accorde une attention particulière à la performance, à l'accessibilité et à l'expérience utilisateur. Mon approche client est exigeante voire perfectionniste.
+              J'accorde une attention particulière à la performance, à l'accessibilité
+              et à l'expérience utilisateur de chaque site que je conçois — parce qu'un
+              site rapide et agréable à utiliser, c'est aussi un site qui convertit mieux
+              vos visiteurs en clients.
             </p>
 
             <p>
-              Je vous invite à découvrir mes projets, qui illustrent mes compétences,
-              ma progression et ma capacité à mener un projet de A à Z. 
+              Je travaille en toute transparence : un premier échange pour cerner votre
+              projet, une proposition claire, puis un développement suivi d'étapes
+              régulières pour que vous restiez toujours informé(e) de l'avancement.
             </p>
 
             <p>
-              Aujourd'hui, mon objectif est de continuer à progresser dans ce domaine en
-              rejoignant une équipe dynamique et innovante, où je pourrai contribuer à des
-              projets modernes qui respectent les bonnes pratiques du développement web.
+              Je vous invite à découvrir mes réalisations ci-dessous, qui illustrent ma
+              façon de travailler et ma capacité à mener un projet jusqu'au bout. Vous
+              avez un projet de site en tête ?{" "}
+              <a href="/#contact" className="text-yellow-500 hover:underline">
+                Parlons-en.
+              </a>
             </p>
           </div>
 

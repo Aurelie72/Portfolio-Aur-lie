@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 import FloatingInput from "../components/FloatingInput.jsx";
 
-const SERVICE_ID = "service_q8vx4km";
-const TEMPLATE_ID = "template_c8bwsi6";
-const PUBLIC_KEY = "R4bdwIYEM1Lp7bftR";
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,17 +13,31 @@ export default function Contact() {
     email: "",
     telephone: "",
     message: "",
-    website: ""
+    website: "",
+    consent: false
   });
 
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState("idle");
 
-  function handleChange(e) {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const nomRef = useRef(null);
+  const emailRef = useRef(null);
+  const messageRef = useRef(null);
+  const fieldRefs = { nom: nomRef, email: emailRef, message: messageRef };
 
-    if (errors[e.target.name]) {
-      setErrors({ ...errors, [e.target.name]: "" });
+  useEffect(() => {
+    if (status === "success") {
+      const timer = setTimeout(() => setStatus("idle"), 6000);
+      return () => clearTimeout(timer);
+    }
+  }, [status]);
+
+  function handleChange(e) {
+    const { name, value, type, checked } = e.target;
+    setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
+
+    if (errors[name]) {
+      setErrors({ ...errors, [name]: "" });
     }
   }
 
@@ -46,6 +60,10 @@ export default function Contact() {
       newErrors.message = "Le message doit contenir au moins 10 caractères.";
     }
 
+    if (!formData.consent) {
+      newErrors.consent = "Merci d'accepter l'utilisation de vos données pour être recontacté(e).";
+    }
+
     return newErrors;
   }
 
@@ -60,6 +78,11 @@ export default function Contact() {
     const newErrors = validate();
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
+
+      const firstErrorField = ["nom", "email", "message"].find((f) => newErrors[f]);
+      if (firstErrorField && fieldRefs[firstErrorField].current) {
+        fieldRefs[firstErrorField].current.focus();
+      }
       return;
     }
 
@@ -74,7 +97,7 @@ export default function Contact() {
       }, PUBLIC_KEY)
       .then(() => {
         setStatus("success");
-        setFormData({ nom: "", email: "", telephone: "", message: "", website: "" });
+        setFormData({ nom: "", email: "", telephone: "", message: "", website: "", consent: false });
         setErrors({});
       })
       .catch((error) => {
@@ -86,27 +109,32 @@ export default function Contact() {
   return (
     <div className="w-full bg-black">
       <section className="max-w-xl mx-auto px-8 py-14 text-white">
-        <h2 className="text-5xl font-bold text-emerald-500 mb-8">Contact</h2>
+        <h2 className="text-5xl font-bold text-emerald-500 mb-2">Contact</h2>
+        <p className="text-gray-400 text-sm mb-8 mx-0">
+          Devis gratuits, réponses sous 24 à 48h.
+        </p>
 
         <form onSubmit={handleSubmit} noValidate className="space-y-6">
 
-<label htmlFor="website" className="sr-only">Ne pas remplir ce champ</label>
-<input
-  type="text"
-  id="website"
-  name="website"
-  value={formData.website}
-  onChange={handleChange}
-  className="hidden"
-  tabIndex="-1"
-  autoComplete="off"
-/>
+          <label htmlFor="website" className="sr-only">Ne pas remplir ce champ</label>
+          <input
+            type="text"
+            id="website"
+            name="website"
+            value={formData.website}
+            onChange={handleChange}
+            className="hidden"
+            tabIndex="-1"
+            autoComplete="off"
+          />
 
           <div>
             <FloatingInput
               id="nom" name="nom" label="Nom"
               value={formData.nom} onChange={handleChange}
               required aria-describedby="nom-error"
+              error={!!errors.nom}
+              inputRef={nomRef}
             />
             {errors.nom && (
               <p id="nom-error" role="alert" className="text-red-400 text-sm mt-1 mx-[30px]">
@@ -120,6 +148,8 @@ export default function Contact() {
               id="email" name="email" label="Email" type="email"
               value={formData.email} onChange={handleChange}
               required aria-describedby="email-error"
+              error={!!errors.email}
+              inputRef={emailRef}
             />
             {errors.email && (
               <p id="email-error" role="alert" className="text-red-400 text-sm mt-1 mx-[30px]">
@@ -128,22 +158,24 @@ export default function Contact() {
             )}
           </div>
 
-<div>
-  <FloatingInput
-    id="telephone"
-    name="telephone"
-    label="Téléphone"
-    type="tel"
-    value={formData.telephone}
-    onChange={handleChange}
-  />
-</div>
+          <div>
+            <FloatingInput
+              id="telephone"
+              name="telephone"
+              label="Téléphone"
+              type="tel"
+              value={formData.telephone}
+              onChange={handleChange}
+            />
+          </div>
 
           <div>
             <FloatingInput
               id="message" name="message" label="Message"
               value={formData.message} onChange={handleChange}
               required textarea aria-describedby="message-error"
+              error={!!errors.message}
+              inputRef={messageRef}
             />
             {errors.message && (
               <p id="message-error" role="alert" className="text-red-400 text-sm mt-1 mx-[30px]">
@@ -153,10 +185,31 @@ export default function Contact() {
           </div>
 
           <div className="mx-[30px]">
+            <label className="flex items-start gap-2 text-sm text-gray-400">
+              <input
+                type="checkbox"
+                name="consent"
+                checked={formData.consent}
+                onChange={handleChange}
+                aria-describedby="consent-error"
+                className="mt-1"
+              />
+              <span>
+                J'accepte que mes données soient utilisées pour être recontacté(e) au sujet de ma demande.
+              </span>
+            </label>
+            {errors.consent && (
+              <p id="consent-error" role="alert" className="text-red-400 text-sm mt-1">
+                {errors.consent}
+              </p>
+            )}
+          </div>
+
+          <div className="mx-[30px]">
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-gray-300"
+              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-black"
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer"}
             </button>
@@ -181,7 +234,7 @@ export default function Contact() {
           <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d'Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
             <FaLinkedin size={32} />
           </a>
-          <a href="mailto:lapaille17@hotmail.fr" aria-label="Envoyer un email à Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
+          <a href="mailto:aurelie72beaufils@gmail.com" aria-label="Envoyer un email à Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
             <FaEnvelope size={32} />
           </a>
         </div>

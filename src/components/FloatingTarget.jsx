@@ -36,7 +36,7 @@ export default function FloatingTarget({
 
   useEffect(() => {
     animate(scope.current, { rotate: -360 }, { duration: 10, repeat: Infinity, ease: "linear" });
-  }, []);
+  }, [animate, scope]);
 
   return (
     <div className="relative w-full flex items-center justify-center py-37 bg-black">
@@ -51,13 +51,13 @@ export default function FloatingTarget({
         {title}
       </h1>
 
-      {/* Conteneur global : texte en orbite (large) + bouton (centré) */}
+     
       <motion.div
         ref={ref}
         style={{ x: springX, y: springY }}
         className="absolute w-64 h-64 flex items-center justify-center translate-y-2"
       >
-        {/* Texte en orbite, tourne en continu, plus grand que le bouton */}
+     
         <motion.div ref={scope} className="absolute w-full h-full pointer-events-none">
           <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible">
             <defs>
@@ -78,7 +78,7 @@ export default function FloatingTarget({
           </svg>
         </motion.div>
 
-        {/* Bouton central, ne tourne pas */}
+
         <motion.button
         aria-label="Afficher la photo d’Aurélie"
           whileHover={{ scale: 1.1 }}
@@ -86,15 +86,15 @@ export default function FloatingTarget({
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
 
-          // Accessibilité de la photo : 
+     
 
 
-  onFocus={() => setIsHovered(true)}        // clavier : tab
-  onBlur={() => setIsHovered(false)}        // clavier : sortie du bouton
+  onFocus={() => setIsHovered(true)}      
+  onBlur={() => setIsHovered(false)}     
 
   onKeyDown={(e) => {
     if (e.key === "Enter" || e.key === " ") {
-      setIsHovered((prev) => !prev);        // clavier : enter / espace
+      setIsHovered((prev) => !prev);     
     }
   }}
           className="relative w-44 h-44 rounded-full border-4 border-white flex items-center justify-center overflow-hidden group z-10"
@@ -110,7 +110,7 @@ export default function FloatingTarget({
           />
         </motion.button>
 
-        {/* Photo qui apparaît au survol, à côté du bouton sur desktop */}
+  
         <AnimatePresence>
   {isHovered && isDesktop && (
     <motion.img
