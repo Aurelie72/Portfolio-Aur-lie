@@ -8,6 +8,8 @@ export default function Hero({
   return (
     <div className="w-full bg-ink text-ivory px-6 pt-20 pb-24">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] md:grid-rows-[auto_auto] gap-8 md:gap-12 items-center">
+        <br />
+    
 
         <div className="md:col-start-1 md:row-start-1">
           <p className="text-sm text-brass mb-4">{title}</p>
