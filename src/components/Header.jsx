@@ -7,7 +7,8 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 bg-ink/95 backdrop-blur border-b border-hairline">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-ink/95 backdrop-blur border-b border-hairline">
+
       <div className="max-w-5xl mx-auto px-6 py-5 flex items-center justify-between">
 
 
