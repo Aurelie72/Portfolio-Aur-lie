@@ -1,13 +1,13 @@
 export default function PolitiqueConfidentialite() {
   return (
-    <div className="w-full bg-black min-h-screen">
-      <section className="max-w-2xl mx-auto px-6 py-14 text-white">
-        <h1 className="text-3xl font-bold text-white mb-8">Politique de confidentialité</h1>
+    <div className="w-full bg-ink min-h-screen">
+      <section className="max-w-2xl mx-auto px-6 py-20 text-ivory">
+        <h1 className="font-serif text-3xl mb-10">Politique de confidentialité</h1>
 
-        <div className="space-y-8 text-sm text-gray-300 leading-relaxed">
+        <div className="space-y-8 text-sm text-muted leading-relaxed">
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Données collectées</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Données collectées</h2>
             <p>
               Ce site collecte des données personnelles uniquement lorsque vous
               remplissez volontairement le formulaire de contact : nom, adresse email,
@@ -16,7 +16,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Finalité</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Finalité</h2>
             <p>
               Ces données sont utilisées exclusivement pour répondre à votre demande de
               contact et échanger avec vous au sujet d'un projet potentiel. Elles ne
@@ -25,7 +25,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Base légale</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Base légale</h2>
             <p>
               Le traitement repose sur votre consentement explicite, recueilli via la
               case à cocher du formulaire de contact, conformément au Règlement Général
@@ -34,7 +34,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Destinataire et sous-traitant</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Destinataire et sous-traitant</h2>
             <p>
               Les messages envoyés via le formulaire de contact sont transmis grâce au
               service tiers EmailJS, qui agit en tant que sous-traitant pour
@@ -44,7 +44,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Durée de conservation</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Durée de conservation</h2>
             <p>
               Vos données sont conservées le temps nécessaire au traitement de votre
               demande, puis supprimées dans un délai maximum de 12 mois en l'absence de
@@ -53,7 +53,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Cookies</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Cookies</h2>
             <p>
               Ce site n'utilise actuellement aucun cookie de suivi, de mesure d'audience
               ou de publicité.
@@ -61,7 +61,7 @@ export default function PolitiqueConfidentialite() {
           </div>
 
           <div>
-            <h2 className="text-lg font-bold text-emerald-400 mb-2">Vos droits</h2>
+            <h2 className="text-base font-semibold text-brass mb-2">Vos droits</h2>
             <p>
               Conformément au RGPD, vous disposez d'un droit d'accès, de rectification,
               d'effacement et de portabilité de vos données, ainsi que du droit de
@@ -71,11 +71,11 @@ export default function PolitiqueConfidentialite() {
             <p className="mt-2">
               Vous disposez également du droit d'introduire une réclamation auprès de
               la{" "}
-              
-               <a href="https://www.cnil.fr"
+              <a
+                href="https://www.cnil.fr"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-emerald-400 hover:underline"
+                className="text-brass underline underline-offset-2 decoration-brass/50 hover:decoration-brass"
               >
                 CNIL
               </a>.

@@ -107,10 +107,10 @@ export default function Contact() {
   }
 
   return (
-    <div className="w-full bg-black">
-      <section className="max-w-xl mx-auto px-8 py-14 text-white">
-        <h2 className="text-5xl font-bold text-emerald-500 mb-2">Contact</h2>
-        <p className="text-gray-400 text-sm mb-8 mx-0">
+    <div className="w-full bg-ink border-t border-hairline">
+      <section className="max-w-xl mx-auto px-8 py-20 text-ivory">
+        <h2 className="font-serif text-3xl sm:text-4xl mb-2">Contact</h2>
+        <p className="text-muted text-sm mb-10">
           Devis gratuits, réponses sous 24 à 48h.
         </p>
 
@@ -132,7 +132,7 @@ export default function Contact() {
             <FloatingInput
               id="nom" name="nom" label="Nom"
               value={formData.nom} onChange={handleChange}
-              required aria-describedby="nom-error"
+              required describedBy={errors.nom ? "nom-error" : undefined}
               error={!!errors.nom}
               inputRef={nomRef}
             />
@@ -147,7 +147,7 @@ export default function Contact() {
             <FloatingInput
               id="email" name="email" label="Email" type="email"
               value={formData.email} onChange={handleChange}
-              required aria-describedby="email-error"
+              required describedBy={errors.email ? "email-error" : undefined}
               error={!!errors.email}
               inputRef={emailRef}
             />
@@ -173,7 +173,7 @@ export default function Contact() {
             <FloatingInput
               id="message" name="message" label="Message"
               value={formData.message} onChange={handleChange}
-              required textarea aria-describedby="message-error"
+              required textarea describedBy={errors.message ? "message-error" : undefined}
               error={!!errors.message}
               inputRef={messageRef}
             />
@@ -185,14 +185,14 @@ export default function Contact() {
           </div>
 
           <div className="mx-[30px]">
-            <label className="flex items-start gap-2 text-sm text-gray-400">
+            <label className="flex items-start gap-2 text-sm text-muted">
               <input
                 type="checkbox"
                 name="consent"
                 checked={formData.consent}
                 onChange={handleChange}
-                aria-describedby="consent-error"
-                className="mt-1"
+                aria-describedby={errors.consent ? "consent-error" : undefined}
+                className="mt-1 accent-brass"
               />
               <span>
                 J'accepte que mes données soient utilisées pour être recontacté(e) au sujet de ma demande.
@@ -209,14 +209,14 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === "sending"}
-              className="w-full py-3 rounded-lg bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-lg text-black"
+              className="w-full py-3 bg-brass hover:bg-brass-deep disabled:opacity-50 disabled:cursor-not-allowed transition-colors font-semibold text-ink"
             >
               {status === "sending" ? "Envoi en cours..." : "Envoyer"}
             </button>
           </div>
 
           {status === "success" && (
-            <p role="alert" className="text-emerald-400 text-sm text-center">
+            <p role="alert" className="text-brass text-sm text-center">
               Message envoyé avec succès !
             </p>
           )}
@@ -227,15 +227,15 @@ export default function Contact() {
           )}
         </form>
 
-        <div className="flex justify-center gap-6 mt-10">
-          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil GitHub d'Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
-            <FaGithub size={32} />
+        <div className="flex justify-center gap-6 mt-12">
+          <a href="https://github.com/Aurelie72" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil GitHub d'Aurélie Beaufils" className="p-3 text-muted hover:text-brass transition-colors">
+            <FaGithub size={28} />
           </a>
-          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d'Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
-            <FaLinkedin size={32} />
+          <a href="https://www.linkedin.com/in/aurelie-beaufils-8026b6309" target="_blank" rel="noopener noreferrer" aria-label="Voir le profil LinkedIn d'Aurélie Beaufils" className="p-3 text-muted hover:text-brass transition-colors">
+            <FaLinkedin size={28} />
           </a>
-          <a href="mailto:aurelie72beaufils@gmail.com" aria-label="Envoyer un email à Aurélie Beaufils" className="p-3 hover:text-emerald-400 transition-colors">
-            <FaEnvelope size={32} />
+          <a href="mailto:aurelie72beaufils@gmail.com" aria-label="Envoyer un email à Aurélie Beaufils" className="p-3 text-muted hover:text-brass transition-colors">
+            <FaEnvelope size={28} />
           </a>
         </div>
       </section>

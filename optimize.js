@@ -13,7 +13,7 @@ fs.readdirSync(folder).forEach((file) => {
     const output = `${folder}${file.split(".")[0]}.webp`;
 
     sharp(input)
-      .webp({ quality: 80 })
+      .webp({ quality: 90 })
       .toFile(output)
       .then(() => console.log(`✔ Converti : ${file} → ${output}`))
       .catch((err) => console.error(`Erreur sur ${file} :`, err));

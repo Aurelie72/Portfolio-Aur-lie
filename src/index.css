@@ -10,4 +10,17 @@
 
 @theme {
   --font-sans: "Space Grotesk", sans-serif;
+  --font-serif: "Fraunces", serif;
+
+  --color-ink: #14121a;
+  --color-ink-soft: #1c1922;
+  --color-hairline: #2e2a38;
+  --color-ivory: #f2ede6;
+  --color-muted: #a8a0b8;
+  --color-brass: #c6a15b;
+  --color-brass-deep: #a9853f;
+}
+
+body {
+  background-color: var(--color-ink);
 }

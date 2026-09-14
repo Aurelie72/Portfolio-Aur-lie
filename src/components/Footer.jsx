@@ -2,14 +2,15 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-300 py-4 text-center text-gray-500 text-sm">
-      <p>&copy; 2026 Aurélie — Portfolio — Tous droits réservés</p>
-      <div className="flex justify-center gap-4 mt-2">
-        <Link to="/mentions-legales" className="hover:text-gray-300 transition-colors">
+    <footer className="bg-ink-soft border-t border-hairline py-10 text-center text-sm text-muted">
+      <p className="font-serif italic text-ivory mb-1">Aurélie Beaufils</p>
+      <p className="mb-6">Développeuse web indépendante</p>
+      <div className="flex justify-center gap-4">
+        <Link to="/mentions-legales" className="underline underline-offset-2 decoration-muted/50 hover:text-brass hover:decoration-brass transition-colors">
           Mentions légales
         </Link>
         <span aria-hidden="true">·</span>
-        <Link to="/politique-confidentialite" className="hover:text-gray-300 transition-colors">
+        <Link to="/politique-confidentialite" className="underline underline-offset-2 decoration-muted/50 hover:text-brass hover:decoration-brass transition-colors">
           Politique de confidentialité
         </Link>
       </div>
