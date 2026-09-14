@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-aur-lie.vercel.app/sitemap.xml
+Sitemap: https://aureliebeaufils.vercel.app/sitemap.xml
