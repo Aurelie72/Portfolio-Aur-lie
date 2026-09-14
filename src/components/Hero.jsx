@@ -8,7 +8,7 @@ export default function Hero({
   return (
     <div className="w-full bg-ink text-ivory px-6 pt-20 pb-24">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-12 items-center">
-<br />
+
         <div>
           <p className="text-sm text-brass mb-4">{title}</p>
           <h1 className="font-serif text-4xl sm:text-5xl leading-tight mb-6">
